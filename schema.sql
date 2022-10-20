@@ -28,3 +28,26 @@ CREATE TABLE species(
     name VARCHAR(20),
     PRIMARY KEY(id)
 );
+
+CREATE TABLE vets(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(20),
+    age INTEGER,
+    date_of_graduation DATE,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE specializations (
+    species_id int,
+    vets_id int,
+    CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id),
+    CONSTRAINT fk_vets FOREIGN KEY(vets_id) REFERENCES vets(id)
+);
+
+CREATE TABLE visits (
+    animals_id int,
+    vets_id int,
+    date_of_visit DATE,
+    CONSTRAINT fk_animals FOREIGN KEY(animals_id) REFERENCES animals(id),
+    CONSTRAINT fk_vets FOREIGN KEY(vets_id) REFERENCES vets(id)
+);

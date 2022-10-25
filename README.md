@@ -10,10 +10,13 @@ This is a database that allows for storage of animals information.
 - Allows one to create animal.
 - Query animals data
 
+## ScreenShort
+![](Schema.png))
 
 ## Built With
 
 - PostgreSQL
+- Linux terminal
 
 
 ## Author
